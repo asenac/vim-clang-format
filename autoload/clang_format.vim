@@ -197,7 +197,7 @@ function! clang_format#replace(line1, line2)
                 endif
 
                 call setreg('g', formatted[i+1:], 'V')
-                undojoin | silent normal! 2gg"_dG
+                silent keepjumps normal! 2gg"_dG
                 silent put g
             catch
                 " Fallback:
